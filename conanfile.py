@@ -5,7 +5,7 @@ SHA1="f1c961b4b35c86ca5fe7f6128442282ce32e431e"
 
 class Gl3wConan(ConanFile):
     name = "gl3w"
-    version = "git-f1c961b"
+    version = "git-f1c961b_1"
     license = "<Put the package license here>"
     url = "<Package recipe repository url here, for issues about the package>"
     settings = "os", "compiler", "build_type", "arch"
@@ -39,3 +39,6 @@ class Gl3wConan(ConanFile):
         self.cpp_info.libs = ["gl3w"]
         if self.settings.os == "Windows":
             self.cpp_info.libs.append("OpenGL32")
+
+        if self.settings.os == "Linux":
+            self.cpp_info.libs.append("dl")

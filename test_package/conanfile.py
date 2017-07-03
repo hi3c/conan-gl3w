@@ -8,7 +8,7 @@ username = os.getenv("CONAN_USERNAME", "hi3c")
 
 class Gl3wTestConan(ConanFile):
     settings = "os", "compiler", "build_type", "arch"
-    requires = "gl3w/git-f1c961b@%s/%s" % (username, channel)
+    requires = "gl3w/git-f1c961b_1@%s/%s" % (username, channel)
     generators = "cmake"
 
     def build(self):
